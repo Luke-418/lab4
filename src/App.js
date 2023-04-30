@@ -1,23 +1,36 @@
 import logo from './logo.svg';
 import './App.css';
 
+import { Button, TextField, Grid, Box } from '@mui/material';
+
+function Popup() {
+  alert('Signup successful!')
+}
+
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Grid container spacing={2}>
+        <Grid item xs={12} justifyContent="center" alignItems="center" backgroundColor="lightBlue">
+          <h1 style={{ color: 'white' }}>Human Computer Interaction Newsletter</h1>
+        </Grid>
+        <Grid item xs={8} display="flex" justifyContent="center" alignItems="center">
+          <p>Signup for the human computer interaction newsletter!</p>
+          <TextField id="outlined-basic" type="email" label="email@wpi.edu" variant="outlined" style={{ marginRight: '20px' }} />
+          <Button variant='contained' onClick={Popup}>Sign Up</Button>
+        </Grid>
+        <Grid item xs={4} display="flex" justifyContent="center" alignItems="center">
+          <Box
+            component="img"
+            sx={{
+              height: '100%',
+              width: '100%',
+            }}
+            alt="A react logo"
+            src={logo}
+          />
+        </Grid>
+      </Grid>
     </div>
   );
 }
